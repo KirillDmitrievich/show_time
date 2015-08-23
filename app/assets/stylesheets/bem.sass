@@ -1,0 +1,15 @@
+$block: 'undefined'
+
+@mixin b($name)
+  $block: $name !global
+
+  .#{$block}
+    @content
+
+@mixin e($name)
+  .#{$block}__#{$name}
+    @content
+
+@mixin m($name)
+  .#{$block}--#{$name}
+    @content

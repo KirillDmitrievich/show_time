@@ -1,0 +1,13 @@
+=link_to 'BACK TO SENTENCES', root_path, class: 'btn btn-info'
+#tags.sentence__tags-list= @tags
+.sentence__form
+  = form_for :user, url: sentence_create_path do |u|
+    = u.label :title
+    = u.text_field :title
+    = u.label :description
+    = u.text_field :description
+    = u.label :author
+    = u.text_field :author
+    = u.label :tags, class: 'tag-it'
+    = u.hidden_field :tags
+    = u.submit :add, class: 'btn btn-success'
