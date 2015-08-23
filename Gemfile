@@ -33,7 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'slim'
 gem 'bootstrap-sass'
-gem 'mysql2'
+gem 'pg'
 gem "figaro"
 
 group :development, :test do

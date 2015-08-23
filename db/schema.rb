@@ -13,31 +13,34 @@
 
 ActiveRecord::Schema.define(version: 20150823122039) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
-    t.string   "content",     limit: 255
-    t.string   "author",      limit: 255
-    t.integer  "sentence_id", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "content"
+    t.string   "author"
+    t.integer  "sentence_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "sentences", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.string   "description", limit: 255
-    t.string   "author",      limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "title"
+    t.string   "description"
+    t.string   "author"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "sentences_tags", id: false, force: :cascade do |t|
-    t.integer "sentence_id", limit: 4, null: false
-    t.integer "tag_id",      limit: 4, null: false
+    t.integer "sentence_id", null: false
+    t.integer "tag_id",      null: false
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
