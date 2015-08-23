@@ -39,15 +39,3 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
-
-require 'pg'
-
-# Output a table of current connections to the DB
-# conn = PG.connect( dbname: 'test_app' )
-# conn.exec( "SELECT * FROM pg_stat_activity" ) do |result|
-#   puts "     PID | User             | Query"
-# result.each do |row|
-#     puts " %7d | %-16s | %s " %
-#       row.values_at('procpid', 'usename', 'current_query')
-#   end
-# end
